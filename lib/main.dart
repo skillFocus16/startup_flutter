@@ -1,3 +1,4 @@
+import 'package:demo_app/ui/home.dart';
 import 'package:demo_app/ui/welcome_home.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +12,8 @@ class MyApp extends StatelessWidget {
       title: 'Welcome App',
 
 //      home: new MyHomePage(title: 'Flutter Demo Home Page'),
-    home: new Welcome(),
+//      home: new Welcome(),
+    home: new Home(),
     );
   }
 }

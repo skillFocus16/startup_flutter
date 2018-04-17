@@ -9,8 +9,19 @@ class Welcome extends StatelessWidget {
 
       alignment: Alignment.center,
 
+      /*creating stacks*/
+      /*child: new Stack(alignment: Alignment.bottomCenter,
+        children: <Widget>[
+          const Text("hello, there..."),
+          const Text("hello again"),
+          const Text("...okayy!")
+        ],
+      ),
+*/
+
+
       /*creating rows*/
-      child: new Row(
+      /*child: new Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           new Text("Item 1", textDirection: TextDirection.ltr,
@@ -24,7 +35,7 @@ class Welcome extends StatelessWidget {
 
         ],
       ),
-
+*/
 
 /*creating columns*/
       /*child: new Column(
