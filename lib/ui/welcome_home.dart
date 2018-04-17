@@ -9,6 +9,7 @@ class Welcome extends StatelessWidget {
 
       alignment: Alignment.center,
 
+      /*creating rows*/
       child: new Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -20,12 +21,12 @@ class Welcome extends StatelessWidget {
           ),
           
           const Expanded(child: const Text("Item3"))
-          
+
         ],
       ),
 
 
-
+/*creating columns*/
       /*child: new Column(
         mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
