@@ -8,28 +8,45 @@ class Welcome extends StatelessWidget {
       color: Colors.greenAccent,
 
       alignment: Alignment.center,
-      child: new Row(mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        new Text("First Item",
-          textDirection: TextDirection.ltr,
-          style: new TextStyle(color: Colors.white,),
-        ),
-        new Text("Second Item",
-          textDirection: TextDirection.ltr,
-          style: new TextStyle(color: Colors.blue,),
-        ),
-        new Container(color: Colors.deepOrange.shade50,
-          alignment: Alignment.bottomLeft,
-           child: new Center(
-            child:  new Text("Third Item",
-               textDirection: TextDirection.ltr,
-               style: new TextStyle(color: Colors.white,),
-             ),
-           )
 
-        )
-      ],
+      child: new Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          new Text("Item 1", textDirection: TextDirection.ltr,
+              style: new TextStyle(fontSize: 12.9,)
+          ),
+          new Text("Item 2", textDirection: TextDirection.ltr,
+              style: new TextStyle(fontSize: 12.9,)
+          ),
+          
+          const Expanded(child: const Text("Item3"))
+          
+        ],
       ),
+
+
+
+      /*child: new Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            new Text("First Item", textDirection: TextDirection.ltr, style: new TextStyle(color: Colors.white,),
+            ),
+            new Text("Second Item",
+              textDirection: TextDirection.ltr,
+              style: new TextStyle(color: Colors.blue,),
+            ),
+            new Container(color: Colors.deepOrange.shade50,
+              alignment: Alignment.bottomLeft,
+               child: new Center(
+                child:  new Text("Third Item",
+                   textDirection: TextDirection.ltr,
+                   style: new TextStyle(color: Colors.white,),
+                 ),
+               )
+
+            )
+          ],
+      ),*/
 
 
       /*child: new Text("Hello World!",
