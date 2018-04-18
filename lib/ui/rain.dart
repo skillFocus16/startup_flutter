@@ -43,7 +43,8 @@ class MakeItRain extends State<RainApp> {
                   child: new Text(
                     '\$$_moneyCounter',
                     style: new TextStyle(
-                      color: Colors.lightBlueAccent,
+//                      color: Colors.lightBlueAccent,
+                      color: _moneyCounter > 2000 ? Colors.blueAccent : Colors.red,
                       fontSize: 46.9,
                       fontWeight: FontWeight.w800,
                     ),
