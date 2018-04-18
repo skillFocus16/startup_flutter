@@ -1,6 +1,7 @@
 import 'package:demo_app/ui/gesture.dart';
 import 'package:demo_app/ui/home.dart';
 import 'package:demo_app/ui/login.dart';
+import 'package:demo_app/ui/planetWeight.dart';
 import 'package:demo_app/ui/rain.dart';
 import 'package:demo_app/ui/welcome_home.dart';
 import 'package:flutter/material.dart';
@@ -48,10 +49,20 @@ void main(){
 }*/
 
 /*lOGIN PAGE*/
+/*
 void main(){
   runApp(new MaterialApp(
     title: "Login",
     home: new Login(),
   )
+  );
+}*/
+
+/*Weight on Earth App*/
+void main(){
+  runApp(new MaterialApp(
+    title: "Weight on Planet X",
+    home: new PlanetWeight(),
+    )
   );
 }
