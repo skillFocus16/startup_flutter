@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
 }
 */
 
-
+/*main method for the Gesture */
 void main() {
   var title = "Gesture";
   runApp(new MaterialApp(
