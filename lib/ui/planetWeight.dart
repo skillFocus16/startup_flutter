@@ -41,10 +41,10 @@ class Weight extends State<PlanetWeight>{
       body: new Center(
         child: new ListView(
           children: <Widget>[
-            new Image.asset("images/face.png",
+            new Image.asset("images/planet.png",
             width: 150.0,
             height: 150.0,
-            color: Colors.pink,
+            color: Colors.blue.shade900,
             ),
 
             new Padding(padding: new EdgeInsets.all(10.5)),
