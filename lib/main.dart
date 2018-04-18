@@ -1,14 +1,13 @@
 import 'package:demo_app/ui/gesture.dart';
 import 'package:demo_app/ui/home.dart';
+import 'package:demo_app/ui/login.dart';
 import 'package:demo_app/ui/rain.dart';
 import 'package:demo_app/ui/welcome_home.dart';
 import 'package:flutter/material.dart';
 
-/*init app*/
+/*INIT APP*/
 /*
 void main() => runApp(new MyApp());
-*/
-/*
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -25,7 +24,8 @@ class MyApp extends StatelessWidget {
 }
 */
 
-/*main method for the Gesture */
+
+/*main method for the GESTURE */
 /*
 void main() {
   var title = "Gesture";
@@ -37,11 +37,21 @@ void main() {
 
 }*/
 
-/*Make it RAIN App*/
+/*MAKE IT RAIN APP*/
+/*
 void main(){
    runApp(new MaterialApp(
      home: new RainApp(),
     )
    );
 
+}*/
+
+/*lOGIN PAGE*/
+void main(){
+  runApp(new MaterialApp(
+    title: "Login",
+    home: new Login(),
+  )
+  );
 }
