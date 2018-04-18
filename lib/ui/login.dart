@@ -40,7 +40,7 @@ class LoginState extends State<Login> {
         ),
         backgroundColor: Colors.blueGrey,
         body: new Center(
-          child: new Column(
+          child: new ListView(
             children: <Widget>[
               /*adding image profile*/
               new Image.asset(
@@ -63,6 +63,7 @@ class LoginState extends State<Login> {
                       ),
                     ),
                     new TextField(
+                      obscureText: true,
                       controller: _passwordController,
                       decoration: new InputDecoration(
                         hintText: "Password",
@@ -131,6 +132,7 @@ class LoginState extends State<Login> {
               ),
             ],
           ),
-        ));
+        ),
+    );
   }
 }
