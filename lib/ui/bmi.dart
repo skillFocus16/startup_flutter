@@ -12,7 +12,7 @@ class BmiState extends State<BmiApp> {
   final TextEditingController _heightController = new TextEditingController();
   final TextEditingController _weightController = new TextEditingController();
   double _result = 0.0, inches = 0.0;
-  String _finalBMI = "";
+  String finalBMI = "";
   String status = "";
 
   void handleCal() {
@@ -26,26 +26,24 @@ class BmiState extends State<BmiApp> {
       if ((_ageController.text.isNotEmpty || age > 0) &&
           (_heightController.text.isNotEmpty || inches > 0) &&
           (_weightController.text.isNotEmpty || weight > 0)) {
+
         _result = weight / (inches * inches) * 703;
 
-        if (double.parse(_result.toStringAsFixed(1)) < 18.5) {
-        status = "Underweight";
-      }  else if ( double.parse(_result.toStringAsFixed(1)) >=  18.5 && _result < 24.9) {
-        status = "Normal";
-      } else if (  double.parse(_result.toStringAsFixed(1)) >=  25.0 && _result < 29.9){
-        status = "Overweight";
-      } else {
-        status = "Obese";
-      }
-      _finalBMI = "Your BMI ${_result.toStringAsFixed(1)}";
-
-
+          if (double.parse(_result.toStringAsFixed(1)) < 18.5) {
+            status = "Underweight";
+          }  else if ( double.parse(_result.toStringAsFixed(1)) >=  18.5 && _result < 24.9) {
+            status = "Normal";
+          } else if (  double.parse(_result.toStringAsFixed(1)) >=  25.0 && _result < 29.9){
+            status = "Overweight";
+          } else {
+            status = "Obese";
+          }
       } else {
         _result = 0.0;
       }
-
-
     });
+    finalBMI = "Your BMI ${_result.toStringAsFixed(1)}";
+
   }
 
   @override
@@ -144,7 +142,8 @@ class BmiState extends State<BmiApp> {
               new Column(
                 children: <Widget>[
                   new Text(
-                    "Your BMI: ${_result.toStringAsFixed(1)}",
+                    finalBMI,
+//                    "Your BMI: ${_result.toStringAsFixed(1)}",
                     style: new TextStyle(
                         color: Colors.blueAccent,
                         fontStyle: FontStyle.italic,
