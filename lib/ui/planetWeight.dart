@@ -10,19 +10,52 @@ class PlanetWeight extends StatefulWidget{
 
 class Weight extends State<PlanetWeight>{
 
+  int radioValue = 0;
+  double _finalResult = 0.0;
+  String weight, _formattedText="";
   final TextEditingController _weightController = new TextEditingController();
-
-  String weight;
-
   final String weightInit = "PLEase Enter Weight";
 
-  void displayWeight(){
+  void handleRadioValueChanged(int value){
+    setState(() {
+        radioValue = value;
+
+        switch(radioValue){
+          case 0:
+            _finalResult = calculateWeight(_weightController.text,0.06);
+            _formattedText = "Your weight on Pluto is ${_finalResult.toStringAsFixed(1)}";
+            break;
+          case 1:
+            _finalResult = calculateWeight(_weightController.text,0.38);
+            _formattedText = "Your weight on Mars is ${_finalResult.toStringAsFixed(1)}";
+            break;
+          case 2:
+            _finalResult = calculateWeight(_weightController.text,0.91);
+            _formattedText = "Your weight on Venus is ${_finalResult.toStringAsFixed(1)}";
+            break;
+
+        }
+    });
+  }
+
+  /*useless here*/
+  /*void displayWeight(){
     if(_weightController.text.isNotEmpty){
       setState(() {
         weight = _weightController.text;
       });
     }else
       weightInit;
+  }*/
+
+  double calculateWeight(String weight, double multiplier) {
+    if(int.parse(weight).toString().isNotEmpty && int.parse(weight) >0){
+      return int.parse(weight) * multiplier;
+    }else{
+      print("wrong");
+    }
+    //return default planet
+    return int.parse("180")*0.38;
   }
 
 
@@ -32,14 +65,15 @@ class Weight extends State<PlanetWeight>{
     return new Scaffold(
       appBar: new AppBar(
         title: new Text("Weight on PLanet X"),
-        backgroundColor: Colors.blue.shade900,
+        backgroundColor: Colors.black38,
         centerTitle: true,
       ),
 
-      backgroundColor: Colors.grey,
+      backgroundColor: Colors.blueGrey,
 
       body: new Center(
         child: new ListView(
+          padding: EdgeInsets.all(2.5),
           children: <Widget>[
             new Image.asset("images/planet.png",
             width: 150.0,
@@ -54,22 +88,49 @@ class Weight extends State<PlanetWeight>{
                 children: <Widget>[
                   new TextField(
                     controller: _weightController,
+                    keyboardType: TextInputType.number,
                     decoration: new InputDecoration(
-                      hintText: "Your weight on Earth",
-                      icon: new Icon(Icons.person),
+                      labelText: "Your weight on Earth" ,
+                      hintText: "in pounds",
+                      icon: new Icon(Icons.person_outline),
                     ),
                   ),
 
               new Padding(padding: EdgeInsets.all(10.5)),
 
+                  /*radio buttons*/
                   new Center(
                      child:  new Row(
+                       mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                            new Container(
-                              margin: const EdgeInsets.only(left: 38.0),
-                              
-                             child: new Text("Hapaaa"),
-                            )
+                          new Radio <int> (
+                            activeColor: Colors.brown,
+                              value: 0, groupValue: radioValue, onChanged: handleRadioValueChanged
+                          ),
+                          new Text(
+                              "Pluto",
+                          style: new TextStyle(
+                              color:  Colors.white30),
+                          ),
+                          new Radio <int> (
+                              activeColor: Colors.redAccent,
+                              value: 1, groupValue: radioValue, onChanged: handleRadioValueChanged
+                          ),
+                          new Text(
+                            "Mars",
+                            style: new TextStyle(
+                                color:  Colors.white30),
+                          ),
+                          new Radio <int> (
+                              activeColor: Colors.orangeAccent,
+                              value: 2, groupValue: radioValue, onChanged: handleRadioValueChanged
+                          ),
+                          new Text(
+                            "Venus",
+                            style: new TextStyle(
+                                color:  Colors.white30),
+                          ),
+
                         ],
                       ),
 
@@ -81,7 +142,7 @@ class Weight extends State<PlanetWeight>{
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       new Text(
-                        "Your weight on Pluto is $weight",
+                        _weightController.text.isEmpty ? weightInit : _formattedText +"lbs",
                         style: new TextStyle(
                             color: Colors.white70,
                             fontSize: 20.5,
@@ -105,6 +166,7 @@ class Weight extends State<PlanetWeight>{
       ),
     );
   }
+
 
 
 }
