@@ -1,3 +1,4 @@
+import 'package:demo_app/ui/bmi.dart';
 import 'package:demo_app/ui/gesture.dart';
 import 'package:demo_app/ui/home.dart';
 import 'package:demo_app/ui/login.dart';
@@ -59,10 +60,20 @@ void main(){
 }*/
 
 /*Weight on Earth App*/
+/*
 void main(){
   runApp(new MaterialApp(
     title: "Weight on Planet X",
     home: new PlanetWeight(),
     )
+  );
+}*/
+
+/*BMI App Challenge*/
+void main(){
+  runApp(new MaterialApp(
+    title: "BMI",
+    home: new BmiApp(),
+  )
   );
 }
